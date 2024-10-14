@@ -1,1 +1,4 @@
-
+.header-content{
+    min-height: 75vh;
+    background: linear-gradient(rgba(8, 153, 86, 0.3), rgba(163, 156, 137, 0.5)), url("../../images/books.jpeg") center/cover no-repeat;
+}
