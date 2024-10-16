@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import axios from 'axios'; // Import axios
+import coverImg from './images/no-cover.png'; // Import your placeholder image
 
 const AppContext = React.createContext();
 
@@ -31,7 +32,7 @@ const AppProvider = ({ children }) => {
             id,
             title,
             authors: authors ? authors.join(", ") : "Unknown author",
-            thumbnail: imageLinks ? imageLinks.thumbnail : "No image",
+            thumbnail: (imageLinks && imageLinks.thumbnail) ? imageLinks.thumbnail : coverImg, // Use coverImg if no thumbnail
             infoLink
           };
         });
