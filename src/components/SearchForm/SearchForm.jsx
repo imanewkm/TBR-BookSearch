@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useGlobalContext } from '../../context';
 import { FaSearch } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
-import "./SearchForm.css";
+import './SearchForm.css';
 
 const SearchForm = () => {
-  return (
-    <div className='search-form'>
-      <div className='search-form-content'>
-        <form className='search-form'>
-          <div className='search-form-elem flex flex-sb bg-white'>
-            <input type = "text"
-            className='form-control' placeholder='The Lost World ...' />
-            <button type = "submit" className='flex flex-c'>
-              <FaSearch className='text-green' size = {32} />
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  )
-}
+  const { setSearchTerm } = useGlobalContext(); // Only use setSearchTerm
+  const [query, setQuery] = useState('');
 
-export default SearchForm
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (query.trim()) {
+      setSearchTerm(query);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="search-form">
+      <div className="search-form-elem">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search for books..."
+          className="form-control"
+        />
+        <button type="submit" className="btn-search">
+          <FaSearch className="text-green" size={24} />
+        </button>
+      </div>
+    </form>
+  );
+};
+
+export default SearchForm;
