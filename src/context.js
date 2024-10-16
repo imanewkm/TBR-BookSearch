@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react';
+import axios from 'axios'; // Import axios
 
-const URL = "https://www.googleapis.com/books/v1/volumes?q=";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
@@ -9,11 +9,18 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [resultTitle, setResultTitle] = useState("");
 
+  // Update the fetchBooks function to use axios
   const fetchBooks = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${URL}${searchTerm}&key=AIzaSyCJQfXq3uedyBsHl6n1yQJtyrMCEFTYiuc`);
-      const data = await response.json();
+      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes`, {
+        params: {
+          q: searchTerm,
+          key: 'AIzaSyCJQfXq3uedyBsHl6n1yQJtyrMCEFTYiuc', // Your API key
+        },
+      });
+      const data = response.data; // Accessing data from the response directly
+
       console.log('Fetched data: ', data);
 
       if (data.items) {
@@ -29,14 +36,13 @@ const AppProvider = ({ children }) => {
           };
         });
         setBooks(booksData);
-        console.log('Parsed books:', booksData);
-        setResultTitle(`Found ${booksData.length} results`);
+        setResultTitle(`Found ${booksData.length} results`); // Set the result title here
       } else {
         setBooks([]);
         setResultTitle("No results found");
       }
     } catch (error) {
-      console.log(error);
+      console.log('Error fetching books:', error);
     } finally {
       setLoading(false);
     }
@@ -47,7 +53,7 @@ const AppProvider = ({ children }) => {
   }, [searchTerm, fetchBooks]);
 
   return (
-    <AppContext.Provider value={{ loading, books, setSearchTerm, resultTitle, setResultTitle }}>
+    <AppContext.Provider value={{ loading, books, setSearchTerm, resultTitle }}>
       {children}
     </AppContext.Provider>
   );
