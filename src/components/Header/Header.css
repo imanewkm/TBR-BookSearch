@@ -1,11 +1,12 @@
 .header-content{
     min-height: 75vh;
-    background: linear-gradient(rgba(8, 153, 86, 0.3), rgba(163, 156, 137, 0.5)), url("../../images/unsplash.jpg") center/cover no-repeat;
+    background: linear-gradient(rgba(8, 153, 86, 0.5), rgba(163, 156, 137, 0.8)), url("../../images/unsplash.jpg") center/cover no-repeat;
     flex-direction: column;
 }
 
 .header-title{
     font-size: 4.2rem;
+    color: var(--while-color)
 }
 
 .header-text{
