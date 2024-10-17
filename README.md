@@ -15,7 +15,7 @@ TBR is a web application designed to help users discover, explore, and learn mor
 - **Styling**: Custom CSS for a clean and modern design
 
 ## Project Architecture
-```css
+```
 TBR-BOOKSEARCH
 │
 ├── node_modules
@@ -48,6 +48,7 @@ TBR-BOOKSEARCH
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
 ## Getting Started
 
