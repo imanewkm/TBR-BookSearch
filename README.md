@@ -16,28 +16,28 @@ TBR is a web application designed to help users discover, explore, and learn mor
 
 ## Project Architecture
 
-📁 TBR-BOOKSEARCH
+TBR-BOOKSEARCH
 │
-├── 📁 node_modules
+├── node_modules
 │
-├── 📁 public
+├── public
 │
-├── 📁 src
-│   ├── 📁 components
-│   │   ├── 📁 BookDetails
-│   │   ├── 📁 BookList
-│   │   ├── 📁 Header
-│   │   ├── 📁 Loader
-│   │   ├── 📁 Navbar
-│   │   ├── 📁 SearchForm
+├── src
+│   ├── components
+│   │   ├── BookDetails
+│   │   ├── BookList
+│   │   ├── Header
+│   │   ├── Loader
+│   │   ├── Navbar
+│   │   ├── SearchForm
 │   │
-│   ├── 📁 images
+│   ├── images
 │   │   ├── Header_cover.png
 │   │   ├── no-cover.png
 │   │   ├── tbr-beige-logo-no-text.png
 │   │   ├── ...
 │   │
-│   ├── 📁 pages
+│   ├── pages
 │   │   ├── About.jsx
 │   │   ├── Home.jsx
 │   │
@@ -45,9 +45,9 @@ TBR is a web application designed to help users discover, explore, and learn mor
 │   ├── index.js
 │   ├── index.css
 │
-├── 📄 package.json
-├── 📄 package-lock.json
-└── 📄 README.md
+├── package.json
+├── package-lock.json
+└── README.md
 
 ## Getting Started
 
