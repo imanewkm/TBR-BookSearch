@@ -14,6 +14,41 @@ TBR is a web application designed to help users discover, explore, and learn mor
 - **API**: Google Books API for retrieving book data
 - **Styling**: Custom CSS for a clean and modern design
 
+## Project Architecture
+
+📁 TBR-BOOKSEARCH
+│
+├── 📁 node_modules
+│
+├── 📁 public
+│
+├── 📁 src
+│   ├── 📁 components
+│   │   ├── 📁 BookDetails
+│   │   ├── 📁 BookList
+│   │   ├── 📁 Header
+│   │   ├── 📁 Loader
+│   │   ├── 📁 Navbar
+│   │   ├── 📁 SearchForm
+│   │
+│   ├── 📁 images
+│   │   ├── Header_cover.png
+│   │   ├── no-cover.png
+│   │   ├── tbr-beige-logo-no-text.png
+│   │   ├── ...
+│   │
+│   ├── 📁 pages
+│   │   ├── About.jsx
+│   │   ├── Home.jsx
+│   │
+│   ├── context.js
+│   ├── index.js
+│   ├── index.css
+│
+├── 📄 package.json
+├── 📄 package-lock.json
+└── 📄 README.md
+
 ## Getting Started
 
 To get started with TBR, follow these steps:
